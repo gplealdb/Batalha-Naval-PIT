@@ -14,3 +14,13 @@ def criar_tabuleiro(tamanho):
             linha.append(".")
         tabuleiro.append(linha)
     return tabuleiro
+
+
+def mostrar_tabuleiro(tabuleiro):
+    """Mostra a matriz com os números das linhas e colunas."""
+    print("\n    1 2 3 4 5")
+    for i in range(len(tabuleiro)):
+        print(" " + str(i + 1), end="  ")
+        for j in range(len(tabuleiro[i])):
+            print(tabuleiro[i][j], end=" ")
+        print()
