@@ -24,3 +24,14 @@ def mostrar_tabuleiro(tabuleiro):
         for j in range(len(tabuleiro[i])):
             print(tabuleiro[i][j], end=" ")
         print()
+
+def ler_numero(mensagem, minimo, maximo):
+    """Lê um número válido entre minimo e maximo e devolve."""
+    while True:
+        entrada = input(mensagem).strip()
+        if entrada.isdigit():
+            numero = int(entrada)
+            if numero >= minimo and numero <= maximo:
+                return numero
+        print("Entrada inválida! Digite de " + str(minimo)
+              + " a " + str(maximo) + ".")
