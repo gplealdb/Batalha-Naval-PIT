@@ -35,3 +35,11 @@ def ler_numero(mensagem, minimo, maximo):
                 return numero
         print("Entrada inválida! Digite de " + str(minimo)
               + " a " + str(maximo) + ".")
+
+def contar_acertos(navios, tiros):
+    """Devolve quantos navios já foram atingidos."""
+    acertos = 0
+    for posicao in navios:
+        if posicao in tiros:
+            acertos = acertos + 1
+    return acertos
