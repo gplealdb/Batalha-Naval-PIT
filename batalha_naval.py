@@ -82,3 +82,15 @@ def jogar_partida(jogadores, placar, historico):
     placar[vencedor] = placar[vencedor] + 1
     historico.append(vencedor)
     print("Placar:", placar)
+
+def mostrar_estatisticas(historico, placar):
+    """Desafio escolhido: estatísticas da sessão - Parte 1."""
+    total = len(historico)
+    print("\nESTATÍSTICAS DA SESSÃO")
+    print("Total de partidas:", total)
+    for nome in placar:
+        vitorias = historico.count(nome)
+        porcentagem = 0
+        if total > 0:
+            porcentagem = vitorias * 100 / total
+        print(nome + ":", vitorias, "vitória(s) -", round(porcentagem, 1), "%")
