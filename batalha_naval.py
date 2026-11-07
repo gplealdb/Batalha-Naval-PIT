@@ -43,3 +43,13 @@ def contar_acertos(navios, tiros):
         if posicao in tiros:
             acertos = acertos + 1
     return acertos
+
+    while vencedor == "":
+        nome = jogadores[turno][0]
+        navios = jogadores[turno][1]
+        print("\nVez de:", nome)
+        mostrar_tabuleiro(tabuleiros[turno])
+
+        linha = ler_numero("Linha (1 a 5): ", 1, 5) - 1
+        coluna = ler_numero("Coluna (1 a 5): ", 1, 5) - 1
+        posicao = (linha, coluna)
