@@ -107,3 +107,16 @@ def mostrar_estatisticas(historico, placar):
         if atual > maior:
             maior = atual
     print("Maior sequência de vitórias seguidas:", maior)
+
+def main():
+    print("=== BATALHA NAVAL SIMPLIFICADA ===")
+    nome1 = input("Nome do jogador 1: ").strip()
+    nome2 = input("Nome do jogador 2: ").strip()
+    if nome1 == "":
+        nome1 = "Jogador 1"
+    if nome2 == "" or nome2 == nome1:
+        nome2 = "Jogador 2"
+
+    jogadores = ((nome1, NAVIOS_J1), (nome2, NAVIOS_J2))
+    placar = {nome1: 0, nome2: 0}
+    historico = []
