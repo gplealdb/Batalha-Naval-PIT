@@ -44,6 +44,14 @@ def contar_acertos(navios, tiros):
             acertos = acertos + 1
     return acertos
 
+
+def jogar_partida(jogadores, placar, historico):
+    """jogadores = ((nome1, navios1), (nome2, navios2))."""
+    tabuleiros = [criar_tabuleiro(TAMANHO), criar_tabuleiro(TAMANHO)]
+    tiros = [set(), set()]
+    turno = 0
+    vencedor = ""
+
     while vencedor == "":
         nome = jogadores[turno][0]
         navios = jogadores[turno][1]
@@ -53,3 +61,24 @@ def contar_acertos(navios, tiros):
         linha = ler_numero("Linha (1 a 5): ", 1, 5) - 1
         coluna = ler_numero("Coluna (1 a 5): ", 1, 5) - 1
         posicao = (linha, coluna)
+
+        if posicao in tiros[turno]:
+            print("Você já atirou aí. Escolha outra posição.")
+        else:
+            tiros[turno].add(posicao)
+            if posicao in navios:
+                tabuleiros[turno][linha][coluna] = "X"
+                print("Acertou!")
+            else:
+                tabuleiros[turno][linha][coluna] = "O"
+                print("Água!")
+
+            if contar_acertos(navios, tiros[turno]) == len(navios):
+                vencedor = nome
+            else:
+                turno = 1 - turno
+
+    print("\n*** VITÓRIA DE", vencedor, "***")
+    placar[vencedor] = placar[vencedor] + 1
+    historico.append(vencedor)
+    print("Placar:", placar)
