@@ -94,3 +94,16 @@ def mostrar_estatisticas(historico, placar):
         if total > 0:
             porcentagem = vitorias * 100 / total
         print(nome + ":", vitorias, "vitória(s) -", round(porcentagem, 1), "%")
+
+    maior = 0
+    atual = 0
+    anterior = ""
+    for vencedor in historico:
+        if vencedor == anterior:
+            atual = atual + 1
+        else:
+            atual = 1
+            anterior = vencedor
+        if atual > maior:
+            maior = atual
+    print("Maior sequência de vitórias seguidas:", maior)
