@@ -107,3 +107,43 @@ def mostrar_estatisticas(historico, placar):
         if atual > maior:
             maior = atual
     print("Maior sequência de vitórias seguidas:", maior)
+
+def main():
+    print("=== BATALHA NAVAL SIMPLIFICADA ===")
+    nome1 = input("Nome do jogador 1: ").strip()
+    nome2 = input("Nome do jogador 2: ").strip()
+    if nome1 == "":
+        nome1 = "Jogador 1"
+    if nome2 == "" or nome2 == nome1:
+        nome2 = "Jogador 2"
+
+    jogadores = ((nome1, NAVIOS_J1), (nome2, NAVIOS_J2))
+    placar = {nome1: 0, nome2: 0}
+    historico = []
+
+ opcao = ""
+    while opcao != "4":
+        print("\nMENU")
+        print("1 - Jogar")
+        print("2 - Ver regras")
+        print("3 - Ver histórico e estatísticas")
+        print("4 - Sair")
+        opcao = input("Escolha uma opção: ").strip()
+
+        if opcao == "1":
+            jogar_partida(jogadores, placar, historico)
+        elif opcao == "2":
+            print("\nCada jogador tem 5 navios escondidos num tabuleiro 5x5.")
+            print("Digite linha e coluna (1 a 5). X = acertou, O = água.")
+            print("Vence quem acertar primeiro todos os seus navios.")
+        elif opcao == "3":
+            print("\nHistórico:", historico)
+            mostrar_estatisticas(historico, placar)
+        elif opcao == "4":
+            mostrar_estatisticas(historico, placar)
+            print("Obrigado por jogar!")
+        else:
+            print("Opção inválida. Digite 1, 2, 3 ou 4.")
+
+
+main()
