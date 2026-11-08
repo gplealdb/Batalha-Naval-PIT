@@ -5,9 +5,11 @@ Trabalho de Lógica, Algoritmos e Programação (Banco de Dados - Faculdade PIT)
 
 Grupo e Funções
 
-• Getúlio Portela Leal: Repositório, README, tuplas e função ler_numero.
-• José Adriano Moreira Lima: Funções da matriz, tabuleiro e contar_acertos.
-• Deylane de Sousa Moura: Relatório técnico ABNT e vídeo de apresentação.
+• Getúlio Portela Leal: Repositório, README, Estrutura: Definindo o tamanho do tabuleiro e as tuplas com as posicoes dos navios, função ler_numero, Funcionalidade: Criando a funcao contar_acertos para verificar navios atingidos e Implementando estatisticas da sessao, cálculo de percentual - Parte 1 e Parte 2 e Documentacao: Finalizando as instrucoes do jogo no README Parte 01.
+
+• José Adriano Moreira Lima: Criar Tabuleiro, Mostrar tabuleiro, manter o jogo funcionado, Correção de código com jogar partida, definição de jogadores, controlar as opções escolhidas pelo usuário e executar as funções, Regras do jogo Parte 2 (README).
+
+• Deylane de Sousa Moura: Relatório técnico ABNT, vídeo de apresentação e formulário.
 
 Como Jogar no VS Code (Sem comandos)
 
